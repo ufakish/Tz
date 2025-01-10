@@ -7,8 +7,8 @@ from pyrogram import filters
 load_dotenv()
 
 # Get this value from my.telegram.org/apps
-API_ID = int(getenv("API_ID", 20137104))
-API_HASH = getenv("1209338eedc55ab701dd2e9d353c05ad")
+API_ID = int(getenv("API_ID"))
+API_HASH = getenv("API_HASH")
 
 # Get your token from @BotFather on Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN")
@@ -32,7 +32,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/ufakish/newji",
+    "https://github.com/Mrcutex1/Riyuu",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv(
@@ -84,35 +84,46 @@ autoclean = []
 confirmer = {}
 file_cache: dict[str, float] = {}
 
-START_IMG_URL = ["https://envs.sh/CwU.jpg",
+START_IMG_URL = ["START_IMG_URL", "https://envs.sh/CwU.jpg",
                  "https://envs.sh/CLg.jpeg",
-               #  "https://te.legra.ph/file/58b491b39cee854695fa9.jpg",
-               #  "https://telegra.ph/file/17b5a312f5385556787e0.jpg",
-               #  "https://telegra.ph/file/5c2c41d52e8819dcbb867.jpg",
-               #  "https://telegra.ph/file/56de88c46f3b02a1722d1.jpg"
+                 # "https://te.legra.ph/file/58b491b39cee854695fa9.jpg",
+                 # "https://telegra.ph/file/17b5a312f5385556787e0.jpg",
+                 # "https://telegra.ph/file/5c2c41d52e8819dcbb867.jpg",
+                 # "https://telegra.ph/file/56de88c46f3b02a1722d1.jpg"
                 ]
     
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://telegra.ph/file/87f680aead03443f291b0.jpg"
+    "PING_IMG_URL", "https://envs.sh/CLg.jpeg"
 )
-PLAYLIST_IMG_URL = "https://graph.org/file/c95a687e777b55be1c792.jpg"
-STATS_IMG_URL = "https://telegra.ph/file/edd388a42dd2c499fd868.jpg"
-TELEGRAM_AUDIO_URL = "https://telegra.ph/file/492a3bb2e880d19750b79.jpg"
-TELEGRAM_VIDEO_URL = "https://telegra.ph/file/492a3bb2e880d19750b79.jpg"
-STREAM_IMG_URL = "https://graph.org/file/ff2af8d4d10afa1baf49e.jpg"
-SOUNCLOUD_IMG_URL = "https://graph.org/file/c95a687e777b55be1c792.jpg"
-YOUTUBE_IMG_URL = "https://graph.org/file/e8730fdece86a1166f608.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://graph.org/file/0bb6f36796d496b4254ff.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://graph.org/file/0bb6f36796d496b4254ff.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://graph.org/file/0bb6f36796d496b4254ff.jpg"
+PLAYLIST_IMG_URL = "https://envs.sh/CLg.jpeg"
+STATS_IMG_URL = "https://envs.sh/CLg.jpeg"
+TELEGRAM_AUDIO_URL = "https://envs.sh/CLg.jpeg"
+TELEGRAM_VIDEO_URL = "https://envs.sh/CLg.jpeg"
+STREAM_IMG_URL = "https://envs.sh/CLg.jpeg"
+SOUNCLOUD_IMG_URL = "https://envs.sh/1mX.jpg"
+YOUTUBE_IMG_URL = "https://envs.sh/CLg.jpeg"
+SPOTIFY_ARTIST_IMG_URL = "https://envs.sh/CLg.jpeg"
+SPOTIFY_ALBUM_IMG_URL = "https://envs.sh/CLg.jpeg"
+SPOTIFY_PLAYLIST_IMG_URL = "https://envs.sh/CLg.jpeg"
 
 
 
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(int(x) * 500**i for i, x in enumerate(reversed(stringt.split(":"))))
+    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:360"))
 
 
+if SUPPORT_CHANNEL:
+    if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
+        raise SystemExit(
+            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
+        )
+
+if SUPPORT_CHAT:
+    if not re.match("(?:http|https)://", SUPPORT_CHAT):
+        raise SystemExit(
+            "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
+        )
