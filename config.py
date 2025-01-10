@@ -89,7 +89,8 @@ START_IMG_URL = ["https://envs.sh/CwU.jpg",
                #  "https://te.legra.ph/file/58b491b39cee854695fa9.jpg",
                #  "https://telegra.ph/file/17b5a312f5385556787e0.jpg",
                #  "https://telegra.ph/file/5c2c41d52e8819dcbb867.jpg",
-               #  "https://telegra.ph/file/56de88c46f3b02a1722d1.jpg"]
+               #  "https://telegra.ph/file/56de88c46f3b02a1722d1.jpg"
+                ]
     
 PING_IMG_URL = getenv(
     "PING_IMG_URL", "https://telegra.ph/file/87f680aead03443f291b0.jpg"
