@@ -55,12 +55,11 @@ def stream_markup(_, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["P_B_1"],
-                callback_data=f"MusicStream {videoid}|{user_id}|a|{channel}|{fplay}",
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
             ),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"), 
             InlineKeyboardButton(
-                text=_["P_B_2"],
-                callback_data=f"MusicStream {videoid}|{user_id}|v|{channel}|{fplay}",
+                text="|►►", callback_data=f"ADMIN Skip|{chat_id}"
             ),
         ],
       #  [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
